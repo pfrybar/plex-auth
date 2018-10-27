@@ -42,7 +42,7 @@ const sessionOptions = {
 
 console.log(app.get('env'))
 if (app.get('env') === 'production') {
-    // app.set('trust proxy', 1) // trust first proxy
+    app.set('trust proxy', 1)
     sessionOptions.cookie.secure = true
 }
 
@@ -68,7 +68,7 @@ app.use((req, res, next) => {
         const time = Date.now() - req.timeStarted
         log(req, `request took ${time} ms`)
     })
-    
+
     next()
 })
 
