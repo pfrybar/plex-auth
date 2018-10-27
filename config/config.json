@@ -1,0 +1,35 @@
+{
+    "secret": "mysupersecuresecret",
+    "groups": [
+        "admin",
+        "user"
+    ],
+    "users": {
+        "admin": {
+            "type": "local",
+            "password": "$2b$10$GvRfRBjTMCsUpbGKNC419eXEdTrJh3MJfgAFNhoobvbmvdd6oBzJq",
+            "groups": [
+                "admin",
+                "user"
+            ]
+        },
+        "user": {
+            "type": "local",
+            "password": "$2b$10$nF/xCexK5X40CiSfvK9p1.oUY0KDhsuuEH22JazapXmbl.HjpyfWO",
+            "groups": [
+                "user"
+            ]
+        }
+    },
+    "routes": [
+        {
+            "path": "/admin",
+            "restrict": "admin"
+        },
+        {
+            "path": "/app/",
+            "restrict": "user"
+        }
+    ],
+    "defaultRoute": "/app/"
+}

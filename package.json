@@ -1,0 +1,28 @@
+{
+    "name": "plex-auth",
+    "version": "0.1.0",
+    "description": "Auth service used by nginx auth_request module.",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js",
+        "gen-pass": "node scripts/gen-pass.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Paul Frybarger",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "bcrypt": "^3.0.2",
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "express-session": "^1.15.6",
+        "session-file-store": "^1.2.0"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "config/config.json",
+            "sessions/*"
+        ]
+    }
+}
